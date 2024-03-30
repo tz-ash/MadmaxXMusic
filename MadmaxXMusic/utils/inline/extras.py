@@ -1,5 +1,5 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
+from MadmaxXMusic import app
 from config import SUPPORT_CHAT
 
 
@@ -45,7 +45,7 @@ def add_markup(_):
         [
             [
                 InlineKeyboardButton(
-                    text="ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url=f"https://t.me/emma_musicop_bot?startgroup=True&admin=delete_messages+invite_users"),
+                    text="ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url=f"https://t.me/{app.username}?startgroup=True&admin=delete_messages+invite_users"),
            ],
         ]
     )

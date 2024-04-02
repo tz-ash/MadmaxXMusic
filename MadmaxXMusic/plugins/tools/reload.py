@@ -5,6 +5,11 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
+from dotenv import load_dotenv
+from pyrogram import filters
+
+load_dotenv()
+
 from MadmaxXMusic import app
 from MadmaxXMusic.core.call import Madmax
 from MadmaxXMusic.misc import db

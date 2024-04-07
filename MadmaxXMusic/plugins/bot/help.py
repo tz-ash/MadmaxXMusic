@@ -81,6 +81,20 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
+    if cb == "hb14":
+        if CallbackQuery.from_user.id not in SUDOERS:
+            return await CallbackQuery.answer(
+                   "ᴛʜɪs ʙᴜᴛᴛᴏɴ ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs\n\nᴄʜᴀʟ ʜᴀᴀᴛ ʙʜᴏsᴅɪᴋᴇ.", show_alert=True
+            )
+        else:
+            await CallbackQuery.edit_message_text(
+                helpers.HELP_14, reply_markup=keyboard
+            )
+            return await CallbackQuery.answer()
+    try:
+        await CallbackQuery.answer()
+    except:
+        pass
     if cb == "hb1":
         await CallbackQuery.edit_message_text(helpers.HELP_1, reply_markup=keyboard)
     elif cb == "hb2":
@@ -107,8 +121,6 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=keyboard)
     elif cb == "hb13":
         await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=keyboard)
-    elif cb == "hb14":
-        await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=keyboard)
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
     
@@ -134,4 +146,3 @@ async def first_pagee(client, CallbackQuery, _):
 
 
 # Do not try to change whole code, just add or remove what you want.
-# Credited To aryan

@@ -52,3 +52,66 @@ def add_markup(_):
         ]
     )
     return upl
+
+def suppclose_markup(_):
+    upl = InlineKeyboardMarkup(
+        [
+            [
+                 InlineKeyboardButton(
+                text="✨ꜱᴜᴘᴘᴏʀᴛ✨", url=SUPPORT_CHAT,
+            ),
+                InlineKeyboardButton(
+                    text=_["CLOSE_BUTTON"],
+                    callback_data="close",
+                ),
+            ]
+        ]
+    )
+    return upl
+
+def source_markup(_):
+    upl = InlineKeyboardMarkup(
+        [
+           [ 
+                InlineKeyboardButton(
+                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
+                    ),
+                    InlineKeyboardButton(
+                        text="ᴄʟᴏsᴇ", callback_data=f"close"
+                    ),
+           ],
+        ]
+    )
+    return upl
+
+def lood_markup(_):
+    upl = InlineKeyboardMarkup(
+        [
+                [
+                    InlineKeyboardButton(
+                        text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/STATUSDAIRY2"
+                    ),
+
+                    InlineKeyboardButton(
+                        text="ᴍᴜsɪᴄ ɢʀᴏᴜᴘ", url="https://t.me/vohmusic"
+                    ),
+                    
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/ABOUT_SASHIKANT/3"
+                    ),
+
+                    InlineKeyboardButton(
+                        text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/VOICEOFHEART0"
+                    ),
+                    
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
+                    )
+                ],
+            ]
+    )
+    return upl

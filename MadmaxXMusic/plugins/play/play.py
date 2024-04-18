@@ -20,7 +20,7 @@ from MadmaxXMusic.utils.inline import (
     slider_markup,
     track_markup,
 )
-from AMadmaxXMusic.utils.logger import play_logs
+from MadmaxXMusic.utils.logger import play_logs
 from MadmaxXMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 

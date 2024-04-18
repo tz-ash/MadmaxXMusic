@@ -36,6 +36,7 @@ from MadmaxXMusic.utils.inline.settings import (
     vote_mode_markup,
 )
 from MadmaxXMusic.utils.inline.start import private_panel
+from MadmaxXMusic.utils.inline import source_markup, lood_markup
 from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
 
 
@@ -54,81 +55,16 @@ async def settings_mar(client, message: Message, _):
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-     InputMediaVideo("https://telegra.ph/file/13f9147896509734c8498.mp4", caption="ᴄʜᴏᴏsᴇ ᴛʜᴇ ᴄᴀᴛᴇɢᴏʀʏ ғᴏʀ\nᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴɴᴀ ɢᴇᴛ ʜᴇʟᴩ."),
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="ᴇᴍᴍᴀ ʟᴏᴠᴇ", callback_data=f"madmax_op"
-                    ),
-                    InlineKeyboardButton(
-                        text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/THEMADMAXPRO/MadmaxXMusic"
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
-                    ),
-                    InlineKeyboardButton(
-                        text="ᴄʟᴏsᴇ", callback_data=f"close"
-                    ),
-                ]
-            ]
-        ),
-    )
+     InputMediaVideo("https://te.legra.ph/file/6621477cab27a27116d4a.mp4", has_spoiler=True),
+        reply_markup=source_markup(_))
 
 @app.on_callback_query(filters.regex("lood") & ~BANNED_USERS)
 @languageCB
 async def support(client, CallbackQuery, _):
     await CallbackQuery.edit_message_text(
         text="๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.\n\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ ˹ᴇᴍᴍᴀ ✘ ᴍᴜsɪᴄ˼ ♪ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ ˹ᴇᴍᴍᴀ ✘ ᴍᴜsɪᴄ˼ ♪, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/STATUSDAIRY2"
-                    ),
-
-                    InlineKeyboardButton(
-                        text="ᴍᴜsɪᴄ ɢʀᴏᴜᴘ", url="https://t.me/vohmusic"
-                    ),
-                    
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/ABOUT_SASHIKANT/3"
-                    ),
-
-                    InlineKeyboardButton(
-                        text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/VOICEOFHEART0"
-                    ),
-                    
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper"
-                    )
-                ],
-            ]
-        ),
-    )
-
-@app.on_callback_query(filters.regex("madmax_op") & ~BANNED_USERS)
-@languageCB
-async def gib_repo(client, CallbackQuery, _):
-    await CallbackQuery.edit_message_media(
-        InputMediaVideo("https://telegra.ph/file/b6b38b43c6d322f3b7e08.mp4", has_spoiler=True, caption="ᴇᴍᴍᴀ ɪ ʟᴏᴠᴇ ʏᴏᴜ 💝🥵✨"),
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="ʙᴀᴄᴋ", callback_data=f"gib_source"
-                    )
-                ],
-            ]
-        ),
-    )
-
+        reply_markup=lood_markup(_))
+    
 @app.on_callback_query(
     filters.regex("settings_helper") & ~BANNED_USERS
 )

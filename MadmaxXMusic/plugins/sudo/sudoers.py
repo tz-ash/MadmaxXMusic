@@ -6,7 +6,7 @@ from MadmaxXMusic.misc import SUDOERS
 from MadmaxXMusic.utils.database import add_sudo, remove_sudo
 from MadmaxXMusic.utils.decorators.language import language
 from MadmaxXMusic.utils.extraction import extract_user
-from MadmaxXMusic.utils.inline import close_markup
+from MadmaxXMusic.utils.inline import suppclose_markup
 from config import BANNED_USERS, OWNER_ID
 
 
@@ -68,4 +68,4 @@ async def sudoers_list(client, message: Message, _):
     if not text:
         await message.reply_text(_["sudo_7"])
     else:
-        await message.reply_text(text, reply_markup=close_markup(_))
+        await message.reply_text(text, reply_markup=suppclose_markup(_))
